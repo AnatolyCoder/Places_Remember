@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %} Places Remember {% endblock %}
+{% block content %}
+<div class="row">
+    {% for ass in backends.associated %}
+        <div class="col-sm-12 mb-3">
+           <h4 class="text-center"> Welcome {{ ass.extra_data.name  }} </h4>
+        </div>
+        {% if ass.provider == 'google-oauth2' %}
+        <div class="col-sm-4 md-4 text-center">
+            <img src="{{ass.extra_data.picture}}" alt="" width="150" height="150" style="border-radius: 50%">
+        </div>
+        {% endif %}
+    {% endfor %}
+
+    <div class="col-sm-8 md-5 text-center social-container my-2">
+        {% if remembers %}
+            <h6> Ваши воспоминания: </h6>
+        {% for remember in remembers %}
+            <p>  {{ remember.name }} - {{ remember.comment }} <br>
+                 ({{remember.lat}} {{remember.lng}})
+            </p>
+        {% endfor %}
+        {% else %}
+            <p> У вас нет ни одного воспоминания </p>
+        {% endif %}
+    </div>
+
+  <div class="col-sm-12 mt-2 text-right">
+    <button class="btn btn-danger">
+      <a href="/map/mapa/">Add Remember</a>
+    </button>
+    <button class="btn btn-danger">
+      <a href="{% url 'logout' %}">Logout</a>
+    </button>
+  </div>
+
+</div>
+{% endblock %}

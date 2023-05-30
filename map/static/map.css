@@ -1,0 +1,42 @@
+body {background-color:  #282c34;
+ font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2%;
+  padding-left: 1%;
+}
+  .menu {
+      width: 15%;
+      min-width: 200px;
+      background-color: rgb(230, 230, 230);
+  }
+  .map {
+      width: 85%;
+      height: 90vh;
+      padding-left: 10px;
+  }
+  .form-group {
+    padding: 4%;
+  }
+  .form-group label {
+    display: block;
+    color: rgb(61, 61, 61);
+    font-size: 16px;
+  }
+  .form-group input,
+  .form-group textarea {
+    width: 95%;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+    font-family: inherit;
+  }
+  #map {
+  height: 100%;
+  width: 100%;
+  }

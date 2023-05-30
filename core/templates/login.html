@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %} Places Remember {% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-sm-12 md-5 text-center social-container my-2">
+        Places Remember — это веб-приложение, с помощью которого вы можете оставлять свои впечатления о посещенных вами местах в удобной форме, и всегда иметь к ним доступ под рукой.
+    </div>
+    <br>
+    <div class="col-md-6 mx-auto social-container my-4 order-md-1">
+        <button class="btn btn-danger  mb-2">
+            <a href="{% url 'social:begin' 'google-oauth2' %}">Login with Google+</a>
+        </button>
+    </div>
+</div>
+{% endblock %}
